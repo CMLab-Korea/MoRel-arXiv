@@ -33,7 +33,17 @@ Figure 1. MoRel enables long-range, flicker-free 4D reconstruction with temporal
 - [ ] Dataset preparation and evaluation scripts
 
 ## Abstract
-Dynamic 3D Gaussian Splatting has recently shown strong performance in reconstructing 4D scenes, yet maintaining long-range temporal consistency without flicker remains challenging, especially under large motion, occlusions, and topology changes. We present **MoRel**, a 4D motion modeling framework that achieves flicker-free long-range reconstruction by explicitly modeling anchor-based temporal relations. MoRel introduces **Anchor Relay-based Bidirectional Blending**, which relays canonical anchors along time and blends forward–backward predictions to suppress temporal artifacts and enforce consistent geometry and appearance. In addition, **Hierarchical Densification** progressively refines Gaussian primitives in a frequency-aware manner, allocating capacity where motion complexity and reconstruction errors are high. Extensive experiments on diverse dynamic benchmarks demonstrate that MoRel improves long-range stability and perceptual quality over existing 4D Gaussian Splatting baselines, while maintaining competitive efficiency.
+
+Recent advances in 4D Gaussian Splatting (4DGS) have extended the high-speed rendering capability of 3D Gaussian Splatting (3DGS) into the temporal domain, enabling real-time rendering of dynamic scenes. However, one of the major remaining challenges lies in modeling long-range motion-contained dynamic videos, where a naïve extension of existing methods leads to severe memory explosion, temporal flickering, and failure to handle appearing or disappearing occlusions over time.
+
+To address these challenges, we propose a novel 4DGS framework characterized by an **Anchor Relay-based Bidirectional Blending (ARBB)** mechanism, named **MoRel**, which enables temporally consistent and memory-efficient modeling of long-range dynamic scenes. Our method progressively constructs locally canonical anchor spaces at key-frame time indices and models inter-frame deformations at the anchor level, enhancing temporal coherence.
+
+By learning bidirectional deformations between key-frame anchors (KfA) and adaptively blending them through learnable opacity control, our approach mitigates temporal discontinuities and flickering artifacts. We further introduce a **Feature-variance-guided Hierarchical Densification (FHD)** scheme that effectively densifies KfAs while preserving rendering efficiency, based on an assigned level of feature variance.
+
+To effectively evaluate our model's capability to handle real-world long-range 4D motion, we newly compose a long-range 4D motion-contained dataset, called **SelfCap<sub>LR</sub>**. It exhibits larger average dynamic motion magnitude and is captured in spatially wider environments compared to previous dynamic video datasets.
+
+Overall, **MoRel** achieves temporally coherent and flicker-free long-range 4D reconstruction while maintaining bounded memory usage, demonstrating both scalability and efficiency in dynamic Gaussian-based representations.
+
 
 ## Method Overview
 MoRel: An anchor-based 4D motion modeling framework for long-range, flicker-free 4D Gaussian Splatting.
