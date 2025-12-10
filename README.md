@@ -36,8 +36,6 @@ Figure 1. MoRel enables long-range, flicker-free 4D reconstruction with temporal
 
 ## Code Release Plan
 - [ ] Core MoRel training and rendering pipeline
-- [ ] Anchor Relay-based Bidirectional Blending (ARBB) modules
-- [ ] Hierarchical Densification utilities and analysis tools
 - [ ] Dataset preparation and evaluation scripts
 
 ## Abstract
