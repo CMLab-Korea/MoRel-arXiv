@@ -56,7 +56,7 @@ Overall, **MoRel** achieves temporally coherent and flicker-free long-range 4D r
 ## Method Overview
 MoRel: An anchor-based 4D motion modeling framework for long-range, flicker-free 4D Gaussian Splatting.
 
-![framework](./assets/main_framework.png)
+![framework](./assets/figure_method_1.png)
 
 1. **Anchor Relay-based Bidirectional Blending (ARBB)**  
    MoRel maintains a sparse set of canonical anchors and propagates them bidirectionally along the temporal axis. Forward and backward anchor predictions are blended through a relay mechanism, which stabilizes motion trajectories, suppresses flicker, and resolves temporal ambiguities in occluded or fast-moving regions.
