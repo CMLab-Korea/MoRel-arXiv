@@ -58,14 +58,22 @@ MoRel: An anchor-based 4D motion modeling framework for long-range, flicker-free
 
 ![framework](./assets/figure_method_1.png)
 
-1. **Anchor Relay-based Bidirectional Blending (ARBB)**  
-   MoRel maintains a sparse set of canonical anchors and propagates them bidirectionally along the temporal axis. Forward and backward anchor predictions are blended through a relay mechanism, which stabilizes motion trajectories, suppresses flicker, and resolves temporal ambiguities in occluded or fast-moving regions.
+### Global Canonical Anchor (GCA)
+MoRel first trains a single **Global Canonical Anchor (GCA)** over the entire sequence from an initial point cloud.  
+The GCA provides a **globally consistent** appearance prior and anchor features whose variances are later used to assign frequency-aware levels for FHD.
 
-2. **Hierarchical Densification**  
-   MoRel performs frequency- and error-aware densification over time. Starting from a compact anchor set, the framework selectively spawns new Gaussians in regions with high residuals or complex motion, enabling fine-grained detail reconstruction without excessive growth of primitives.
+### Key-frame Anchors & Anchor Relay
+Periodically placed **Key-frame Anchors (KfAs)** are initialized from the level-assigned GCA and locally refined around their key-frame indices.  
+Each KfA acts as a **local canonical space** for its temporal neighborhood, forming an anchor relay that supports long-range modeling and random temporal access under bounded memory.
 
-3. **Long-Range 4D Reconstruction**  
-   By combining ARBB and hierarchical densification, MoRel reconstructs long sequences with consistent geometry and appearance. The model is compatible with standard 4DGS training objectives (e.g., photometric and perceptual losses) and can be seamlessly integrated into existing Gaussian Splatting pipelines.
+### Bidirectional Deformation & Blending
+In the **Progressive Windowed Deformation (PWD)** stage, each KfA learns forward and backward deformation fields within a **local bidirectional deformation window**, with anchors loaded on demand to keep GPU memory bounded.  
+The **Intermediate Frame Blending (IFB)** stage then learns temporal opacity weights to fuse neighboring KfAs, yielding **smooth transitions and consistent long-range motion**.
+
+### Feature-variance-guided Hierarchical Densification
+**Feature-variance-guided Hierarchical Densification (FHD)** uses the variance of anchor features as a proxy for local frequency, assigning levels and modulating gradient-based densification accordingly.  
+Low-frequency structure is stabilized early, while high-frequency regions are refined later, improving reconstruction quality without exceeding the memory budget.
+
 
 ## Prepare Dataset
 TBD;  
