@@ -1,5 +1,74 @@
-# [arXiv'25] MoRel:Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
+<h1>
+  [2025]  <img src="assets/morel.png" width="30" align="absmiddle">
+  MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
+</h1>
 
-- Official project page: [https://cmlab-korea.github.io/MoCHA-former/](https://cmlab-korea.github.io/MoRel/)
-- Paper (arXiv) will be updated soon
-- Code will be updated soon
+**Author list will be updated soon**
+<br>
+<br>
+<sup>1</sup>Chung-Ang University, <sup>2</sup>Collaborating institutions
+
+<!-- * Official project page:  https://cmlab-korea.github.io/MoRel/
+* Paper (arXiv):  -
+* Code will be updated soon -->
+
+[![Project Page](https://img.shields.io/badge/Project-Page-1E90FF)](https://cmlab-korea.github.io/MoRel/)
+[![arXiv](https://img.shields.io/badge/arXiv-TBD-B31B1B.svg)](#)
+![Stars](https://img.shields.io/github/stars/CMLab-Korea/MoRel?style=social)
+
+This repository is the official PyTorch implementation of  
+**“MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification.”**
+
+![teaser](./assets/teaser.png)  
+Figure 1. MoRel enables long-range, flicker-free 4D reconstruction with temporally coherent details, even under large motions and topology changes.
+
+## News
+* Repository created and initial codebase is being organized.
+* Paper under review; details will be updated after the review process.
+
+## Code Release Plan
+- [ ] Core MoRel training and rendering pipeline
+- [ ] Anchor Relay-based Bidirectional Blending (ARBB) modules
+- [ ] Hierarchical Densification utilities and analysis tools
+- [ ] Dataset preparation and evaluation scripts
+
+## Abstract
+Dynamic 3D Gaussian Splatting has recently shown strong performance in reconstructing 4D scenes, yet maintaining long-range temporal consistency without flicker remains challenging, especially under large motion, occlusions, and topology changes. We present **MoRel**, a 4D motion modeling framework that achieves flicker-free long-range reconstruction by explicitly modeling anchor-based temporal relations. MoRel introduces **Anchor Relay-based Bidirectional Blending**, which relays canonical anchors along time and blends forward–backward predictions to suppress temporal artifacts and enforce consistent geometry and appearance. In addition, **Hierarchical Densification** progressively refines Gaussian primitives in a frequency-aware manner, allocating capacity where motion complexity and reconstruction errors are high. Extensive experiments on diverse dynamic benchmarks demonstrate that MoRel improves long-range stability and perceptual quality over existing 4D Gaussian Splatting baselines, while maintaining competitive efficiency.
+
+## Method Overview
+MoRel: An anchor-based 4D motion modeling framework for long-range, flicker-free 4D Gaussian Splatting.
+
+![framework](./assets/main_framework.png)
+
+1. **Anchor Relay-based Bidirectional Blending (ARBB)**  
+   MoRel maintains a sparse set of canonical anchors and propagates them bidirectionally along the temporal axis. Forward and backward anchor predictions are blended through a relay mechanism, which stabilizes motion trajectories, suppresses flicker, and resolves temporal ambiguities in occluded or fast-moving regions.
+
+2. **Hierarchical Densification**  
+   MoRel performs frequency- and error-aware densification over time. Starting from a compact anchor set, the framework selectively spawns new Gaussians in regions with high residuals or complex motion, enabling fine-grained detail reconstruction without excessive growth of primitives.
+
+3. **Long-Range 4D Reconstruction**  
+   By combining ARBB and hierarchical densification, MoRel reconstructs long sequences with consistent geometry and appearance. The model is compatible with standard 4DGS training objectives (e.g., photometric and perceptual losses) and can be seamlessly integrated into existing Gaussian Splatting pipelines.
+
+## Prepare Dataset
+TBD;  
+We will provide:
+- Dataset structure and naming conventions
+- Scripts for converting multi-view videos and COLMAP outputs into the MoRel 4DGS format
+- Example configurations for public dynamic scene benchmarks
+
+## Environment Setting
+TBD;  
+The repository will include:
+- Conda environment specification
+- Required PyTorch and CUDA versions
+- Installation instructions for the Gaussian rasterizer and related dependencies
+
+## Get Started
+TBD;  
+We will provide:
+- Minimal training example on a small dynamic sequence
+- Inference script for rendering long-range 4D videos
+- Configuration templates for different datasets and ablation studies
+
+## Results
+Please visit our [project page](https://cmlab-korea.github.io/MoRel/) for video demos, qualitative comparisons, and quantitative results.
