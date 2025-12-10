@@ -1,5 +1,5 @@
 <h1>
-  [2025]  <img src="assets/morel.png" width="30" align="absmiddle">
+  [arXiv'25]  <img src="assets/morel.png" width="30" align="absmiddle">
   MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 </h1>
 
