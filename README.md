@@ -3,7 +3,19 @@
   MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 </h1>
 
-**Author list will be updated soon**
+**<a href="mailto:s.kwak@etri.re.kr">Sangwoon Kwak</a>**<sup>1*</sup>, 
+**<a href="mailto:weeyoungkwon@cau.ac.kr">Weeyoung Kwon</a>**<sup>2*</sup>, 
+**<a href="mailto:jyj0120@etri.re.kr">Jun Young Jeong</a>**<sup>1</sup>, 
+**<a href="mailto:joelkimgh@cau.ac.kr">Geonho Kim</a>**<sup>2</sup>,  
+**<a href="mailto:wscheong@etri.re.kr">Won-Sik Cheong</a>**<sup>1</sup>, 
+**<a href="mailto:jihyongoh@cau.ac.kr">Jihyong Oh</a>**<sup>2†</sup>  
+<br>
+
+<sup>1</sup>Electronics and Telecommunications Research Institute (ETRI)  
+<sup>2</sup>Chung-Ang University  
+<br>
+*Equal contribution, †Corresponding author
+
 <br>
 <br>
 <sup>1</sup>Chung-Ang University, <sup>2</sup>Collaborating institutions
