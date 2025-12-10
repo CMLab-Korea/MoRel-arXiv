@@ -15,11 +15,7 @@
 <sup>2</sup>Chung-Ang University  
 <br>
 *Equal contribution, †Corresponding author
-
 <br>
-<br>
-<sup>1</sup>Chung-Ang University, <sup>2</sup>Collaborating institutions
-
 <!-- * Official project page:  https://cmlab-korea.github.io/MoRel/
 * Paper (arXiv):  -
 * Code will be updated soon -->
