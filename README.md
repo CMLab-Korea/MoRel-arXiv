@@ -69,24 +69,13 @@ MoRel: An anchor-based 4D motion modeling framework for long-range, flicker-free
 
 ## Prepare Dataset
 TBD;  
-We will provide:
-- Dataset structure and naming conventions
-- Scripts for converting multi-view videos and COLMAP outputs into the MoRel 4DGS format
-- Example configurations for public dynamic scene benchmarks
 
 ## Environment Setting
 TBD;  
-The repository will include:
-- Conda environment specification
-- Required PyTorch and CUDA versions
-- Installation instructions for the Gaussian rasterizer and related dependencies
+
 
 ## Get Started
 TBD;  
-We will provide:
-- Minimal training example on a small dynamic sequence
-- Inference script for rendering long-range 4D videos
-- Configuration templates for different datasets and ablation studies
 
 ## Results
 Please visit our [project page](https://cmlab-korea.github.io/MoRel/) for video demos, qualitative comparisons, and quantitative results.
