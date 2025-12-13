@@ -21,7 +21,7 @@
 * Code will be updated soon -->
 
 [![Project Page](https://img.shields.io/badge/Project-Page-1E90FF)](https://cmlab-korea.github.io/MoRel/)
-[![arXiv](https://img.shields.io/badge/arXiv-TBD-B31B1B.svg)](#)
+[![arXiv](https://img.shields.io/badge/arXiv-TBD-B31B1B.svg)](https://www.arxiv.org/pdf/2512.09270)
 ![Stars](https://img.shields.io/github/stars/CMLab-Korea/MoRel?style=social)
 
 This repository is the official PyTorch implementation of  
